@@ -1,0 +1,67 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: products
+    description: "model for products"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "the name of the product"
+        tests:
+          - not_null
+          - exist_product 
+
+  - name: owners
+    description: "model for owners"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "Owners first names"
+      - name: last_name
+        description: "Owners last name"
+      - name: modified_date
+        description: "last update date and time"
+        
+  - name: product_owners
+    description: "model for products and owners relationship"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "the foreign key related to products"
+        tests:
+          - not_null
+      - name: owner_id
+        description: "the foreign key related to owners"
+        tests:
+          - not_null
