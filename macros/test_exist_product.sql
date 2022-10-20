@@ -1,10 +1,9 @@
-{% exist_product(model, column_name) %}
+{% macro test_exist_product(model, column_name) %}
 
 with validation as (
 
     select
-        {{ column_name }} as id
-
+        {{ column_name }} as name
     from {{ model }}
 
 ),
@@ -12,8 +11,7 @@ with validation as (
 validation_errors as (
 
     select
-        id
-
+        name
     from validation
     -- if this is true, then even_field is actually odd!
     where name = 'BOCA1'
@@ -23,4 +21,4 @@ validation_errors as (
 select *
 from validation_errors
 
-{% endtest %}
+{% endmacro %}
