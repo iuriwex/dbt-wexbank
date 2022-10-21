@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  
+  - name: base_operations__failed_transactions
+    description: "model for failed transactions"
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: ammount
+        description: "transaction amount"
+
+  - name: base_operations__successfull_transactions
+    description: "model for successfull transactions"
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: ammount
+        description: "transaction amount"

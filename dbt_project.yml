@@ -34,6 +34,27 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   wexbank:
     # Config indicated by + and applies to all files under models/example/
+    +materialized: view
+
+    marts: # it consists of the core tables for end-users and business vertical-specific tables
+      +materialized: table
+
+      core: # it defines the fact and dimension models to be used by end-users. The fact and dimension models are materialized as tables, for performance on frequent use.
+        +materialized: table
+
+      risk:
+        +schema: risk
+
+
+      
     example:
-      +materialized: view
+      +materialized: view      
+    
+    staging:
+      +mateerialized: view
+      base:
+        +mateerialized: view
+        operations:
+          +mateerialized: view
+
       +schema: staging
