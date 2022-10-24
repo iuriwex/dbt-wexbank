@@ -1,33 +1,13 @@
-
 version: 2
 
 models:
-  
   - name: dim_customers
-    description: "model for customers"
     columns:
       - name: customer_id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
-      - name: customer_name
-        description: "the name of the customer"
         tests:
           - not_null
-
   - name: fct_transactions
-    description: "model for transactions"
-    columns:
-      - name: transaction_id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
-      - name: customer_id
-        description: "SK for customers table"
-      - name: amount
-        description: "transaction amount"
-      - name: creation_date
-        description: "creation date and time"
-        
+
+
+
+  

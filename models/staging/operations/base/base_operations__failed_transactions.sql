@@ -1,6 +1,6 @@
 with source as (
     
-    select * from {{ source('base_operations', 'base_operations__failed_transactions') }}
+    select * from {{ source('staging', 'base_operations__failed_transactions') }}
     
 ),
 

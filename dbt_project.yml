@@ -56,5 +56,4 @@ models:
         +mateerialized: view
         operations:
           +mateerialized: view
-
       +schema: staging

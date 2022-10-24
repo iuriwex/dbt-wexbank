@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: customer_transactions
+    columns:
+      - name: account_id
+        tests:
+          - not_null
+      - name: transaction_id
+        tests:
+          - unique
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['approved', 'canceled', 'denied', 'closed']
