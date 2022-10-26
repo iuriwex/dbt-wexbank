@@ -1,3 +1,16 @@
+
+DROP DATABASE IF EXISTS wexbank;
+CREATE DATABASE wexbank
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
 CREATE SCHEMA IF NOT EXISTS warehouse;
 CREATE SCHEMA IF NOT EXISTS snapshots;
 DROP TABLE IF EXISTS warehouse.customers;
@@ -24,7 +37,7 @@ CREATE TABLE warehouse.transactions (
     account_id INT,
     status VARCHAR(15),
     approved_at VARCHAR(100),
-    created_at VARCHAR(100),
+    created_at VARCHAR(100)
 );
 DROP TABLE IF EXISTS warehouse.state;
 CREATE TABLE warehouse.state (
