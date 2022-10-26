@@ -1,19 +1,15 @@
 version: 2
 
 models:
-  - name: dim_customers
+  - name: stg_eltool__customers
     columns:
       - name: customer_id
         tests:
           - not_null
-
-  - name: dim_accounts
+  - name: stg_eltool__accounts
     columns:
       - name: account_id
         tests:
           - not_null
-  - name: fct_transactions
-
-
-
-  
+  - name: stg_eltool__transactions
+  - name: stg_eltool__state
